@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>InternousLab</title>
+</head>
+<body th:object="${MUserForm}">
+	<h2>登録テスト</h2>
+	<div class="">
+		<form th:action="@{/internous/create/user/confirm/}" th:object="${MUserForm}" method="POST">
+			<div th:each="error : ${loginId}">
+			 	<span th:text="${error.defaultMessage}" style="color:red"></span>
+			</div>
+			<div>
+				 <label>ログインID</label>
+				 <input type="text" name="loginId" th:field="*{loginId}" th:errorclass="fieldError" />
+			</div>
+			<div th:each="error : ${password}">
+			 	<span th:text="${error.defaultMessage}" style="color:red"></span>
+			</div>
+			<div>
+				<label>パスワード</label>
+				<input type="password" name="password" th:field="*{password}" />
+			</div>
+			<div th:each="error : ${userName}">
+			 	<span th:text="${error.defaultMessage}" style="color:red"></span>
+			</div>
+			<div>
+				<label>ユーザ名</label>
+				<input type="text" name="userName" th:field="*{userName}" />
+			</div>
+
+			<input type="submit" value="送信" />
+		</form>
+	</div>
+</body>
+</html>

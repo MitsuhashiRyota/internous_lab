@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Index画面</title>
+</head>
+<body th:object="${MUserForm}">
+	<h2>確認エラーテスト</h2>
+	<p th:text="${test}"></p>
+	<p th:text="${error}"></p>
+	<ul>
+        <li th:each="error : ${loginId}">
+            <span th:text="${error.defaultMessage}">Error message</span>
+        </li>
+    </ul>
+    <ul>
+        <li th:each="error : ${password}">
+            <span th:text="${error.defaultMessage}">Error message</span>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>TEST画面</title>
+</head>
+<body>
+	<h2>TEST</h2>
+	<p th:text="${session.mUserForm.loginId}"/>
+
+	<form action="./confirm/" th:method="POST">
+		<input type="text" name="text1" value="" />
+		<input type="submit" value="送信" />
+	</form>
+</body>
+</html>
